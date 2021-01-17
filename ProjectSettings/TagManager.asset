@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Vcam
-  - Dynamic
+  - Enemy
+  - Structure
+  - Item
   layers:
   - Default
   - TransparentFX

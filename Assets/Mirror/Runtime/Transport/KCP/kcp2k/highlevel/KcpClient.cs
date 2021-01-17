@@ -66,11 +66,11 @@ namespace kcp2k
             connection.Connect(address, port, noDelay, interval, fastResend, congestionWindow, sendWindowSize, receiveWindowSize);
         }
 
-        public void Send(ArraySegment<byte> segment, KcpChannel channel)
+        public void Send(ArraySegment<byte> segment)
         {
             if (connected)
             {
-                connection.SendData(segment, channel);
+                connection.Send(segment);
             }
             else Log.Warning("KCP: can't send because client not connected!");
         }

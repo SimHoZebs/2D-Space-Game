@@ -6,6 +6,7 @@ using Cinemachine;
 
 public class CameraControl : NetworkBehaviour
 {
+    //Code for controlling the top down view camera's motion.
     private CinemachineVirtualCamera freeCam;
 
     [Client]
