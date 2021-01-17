@@ -2243,6 +2243,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c5a43166932d941904138575e2afdb, type: 3}
+--- !u!1 &1302955328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5984688386389810365, guid: abdb5eb9ba60e8344af15cbec08e56a8, type: 3}
+  m_PrefabInstance: {fileID: 1949028672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1302955329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302955328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49fd718dc90f0441a5a60d5231d67c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  aiMovementSpeed: 6
+  aiWalkSpeed: 3
+  pauseDuration: 3
+  maxMoveDuration: 2
+  moveDirections:
+  - {x: 0, y: 1, z: 0}
+  - {x: 1, y: 0, z: 7.92e-43}
+  - {x: -0, y: -1, z: 952.5239}
+  - {x: -1, y: -0, z: 7.9e-43}
+--- !u!50 &1302955330
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302955328}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1737610453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2782,6 +2831,18 @@ PrefabInstance:
     - target: {fileID: 5984688386389810355, guid: abdb5eb9ba60e8344af15cbec08e56a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984688386389810364, guid: abdb5eb9ba60e8344af15cbec08e56a8, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984688386389810364, guid: abdb5eb9ba60e8344af15cbec08e56a8, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984688386389810364, guid: abdb5eb9ba60e8344af15cbec08e56a8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5984688386389810365, guid: abdb5eb9ba60e8344af15cbec08e56a8, type: 3}
       propertyPath: m_Name
