@@ -9,28 +9,31 @@ public class AIMovement : NetworkBehaviour
     [SerializeField] private float aiWalkSpeed = 3f;
     [SerializeField] private float pauseDuration = 3f;
     [SerializeField] private float maxMoveDuration = 2f;
-    [SerializeField] private Vector3[] moveDirections = new Vector3[] {Vector3.up, Vector3.right, -Vector3.up, -Vector3.right};
+    [SerializeField] private bool doRandomMovement = false;
     private bool moving;
+    private Vector3[] moveDirections = new Vector3[] {Vector3.up, Vector3.right, -Vector3.up, -Vector3.right};
     private Vector3 randomDirection;
+    private Rigidbody2D rb;
 
     void Start()
     {
         StartCoroutine("MoveRandomly");
     }
 
-    // Update is called once per frame
     [Server]
-    void Update()
-    {
+    private void FixedUpdate() {
         if (moving){
             Move(randomDirection);
         }
     }
 
+
     private IEnumerator MoveRandomly(){
         if (isLocalPlayer){ Debug.Log("Player is running this?");}
 
         while (true){
+            yield return new WaitUntil(() => doRandomMovement);
+
             Debug.Log("Choosing random duration.");
             float randomMoveDuration = Random.Range(0.1f, maxMoveDuration);
             randomDirection = moveDirections[Random.Range(0,3)];
@@ -47,11 +50,10 @@ public class AIMovement : NetworkBehaviour
             yield return new WaitForSeconds(pauseDuration);
             Debug.Log("Done Waiting.");
         }
-
     }
 
     private void Move(Vector3 randomDirection){
-        transform.position += randomDirection*aiMovementSpeed*Time.deltaTime;
+        rb.velocity = randomDirection*aiMovementSpeed*Time.deltaTime;
     }
 
     

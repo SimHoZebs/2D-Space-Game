@@ -271,7 +271,6 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerName: 
-  charInfo: {fileID: 11400000, guid: b3ee014655fcd784cb149d232d27fd02, type: 2}
 --- !u!114 &8524156126193499172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,8 +285,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  moveSpeed: 6
-  walkSpeed: 3
+  moveSpeed: 300
+  walkSpeed: 100
 --- !u!114 &128711186855579805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +341,7 @@ MonoBehaviour:
   syncInterval: 0.1
   bullet: {fileID: 5438709886882331525, guid: 763188bf4c1895b4496aa50e3ae1451c, type: 3}
   gun: {fileID: 4570851782644027905}
-  bulletSpeed: 15
+  bulletSpeed: 1500
 --- !u!50 &-2383878924532332322
 Rigidbody2D:
   serializedVersion: 4
@@ -355,9 +354,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_Mass: 65
+  m_LinearDrag: 2
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0

@@ -7,7 +7,7 @@ public class Shoot : NetworkBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject gun;
-    [SerializeField] private float bulletSpeed = 15f;
+    [SerializeField] private float bulletSpeed = 1500f;
 
     [Client]
     private void Start() {
