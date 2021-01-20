@@ -31,7 +31,7 @@ public class MovementControl : NetworkBehaviour
 
     [Client]
     private void Move(){
-        var newPosition = new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime,Input.GetAxis("Vertical")*Time.deltaTime);
+        var newPosition = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 
         rb.velocity = newPosition*(moveSpeed - walkSpeed*Input.GetAxis("Walk"));
     }

@@ -42,12 +42,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Structures
+    uniqueID: 788003631
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Doors
-    uniqueID: 2355879503
+  - name: Enemy
+    uniqueID: 823519875
     locked: 0
-  - name: Walls
-    uniqueID: 788003631
+  - name: Players
+    uniqueID: 303581207
     locked: 0

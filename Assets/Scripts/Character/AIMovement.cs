@@ -17,6 +17,7 @@ public class AIMovement : NetworkBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         StartCoroutine("MoveRandomly");
     }
 

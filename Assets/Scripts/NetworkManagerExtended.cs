@@ -59,7 +59,7 @@ public class NetworkManagerExtended : NetworkManager
         Debug.Log("AssignPlayerNameMessage");
         GameObject playerObj = Instantiate(playerPrefab);
 
-        playerObj.GetComponent<Player>().playerName = playerNameMessage.playerName;
+        playerObj.GetComponent<PlayerInfo>().playerName = playerNameMessage.playerName;
 
         NetworkServer.AddPlayerForConnection(connection, playerObj);
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class Player : NetworkBehaviour
+public class PlayerInfo : NetworkBehaviour
 {
     [SyncVar (hook = nameof(OnNameChange))] [SerializeField]
     public string playerName;
