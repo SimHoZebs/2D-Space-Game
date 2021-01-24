@@ -6,14 +6,16 @@ using Mirror;
 public class MovementControl : NetworkBehaviour
 {
     //Controls player motion and rotation.
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float walkSpeed = 5f;
     private Rigidbody2D rb;
+    [SerializeField] private float moveSpeed = 6f;
+    [SerializeField] private float walkSlowdown = 3f;
 
     [Client]
     private void Start() {
         if (!isLocalPlayer){ return;}
+
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     [Client]
@@ -31,9 +33,10 @@ public class MovementControl : NetworkBehaviour
 
     [Client]
     private void Move(){
+
         var newPosition = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 
-        rb.velocity = newPosition*(moveSpeed - walkSpeed*Input.GetAxis("Walk"));
+        rb.velocity = newPosition*(moveSpeed - walkSlowdown*Input.GetAxis("Walk"));
     }
 
     [Client]

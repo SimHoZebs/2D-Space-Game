@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Structure
   - Item
+  - UI
+  - Menu
   layers:
   - Default
   - TransparentFX
@@ -53,4 +55,7 @@ TagManager:
     locked: 0
   - name: Players
     uniqueID: 303581207
+    locked: 0
+  - name: UI
+    uniqueID: 3170959919
     locked: 0

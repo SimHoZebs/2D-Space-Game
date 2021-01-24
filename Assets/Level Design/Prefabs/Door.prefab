@@ -61,8 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2232951df1cae646a4fef5368ca9d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   doorObj: {fileID: 5319798149362644174}
 --- !u!58 &2907216132163792042
 CircleCollider2D:
@@ -94,7 +92,6 @@ GameObject:
   - component: {fileID: 5319798149362644160}
   - component: {fileID: 5319798149947191291}
   - component: {fileID: 793200597234490190}
-  - component: {fileID: 896455969}
   m_Layer: 0
   m_Name: Door
   m_TagString: Structure
@@ -182,7 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  doorOpenSpeed: 2
 --- !u!61 &5319798149362644160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240,32 +236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  serverOnly: 0
+  serverOnly: 1
   m_AssetId: 
   hasSpawned: 0
---- !u!114 &896455969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5319798149362644174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 2ffbf72e0000000017481812
-  m_ShapePath:
-  - {x: -1.5, y: -0.5, z: 0}
-  - {x: 1.5, y: -0.5, z: 0}
-  - {x: 1.5, y: 0.5, z: 0}
-  - {x: -1.5, y: 0.5, z: 0}
-  m_ShapePathHash: 0
-  m_Mesh: {fileID: 0}
-  m_InstanceId: -50238

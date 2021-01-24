@@ -8,6 +8,7 @@ public class NetworkManagerExtended : NetworkManager
 
     [SerializeField] private bool debugMode = false;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private GameObject defaultWeapon;
     private string typedName;
 
     public override void Start()
@@ -20,11 +21,6 @@ public class NetworkManagerExtended : NetworkManager
         }
     }
 
-    //NetworkMessage to send playerName data collected from here to the created local player
-    public struct PlayerNameMessage: NetworkMessage{
-        public string playerName;
-    };
-
     //This is constantly updated at every change via Input Field in Unity.
     //It could be little more efficient to update it when the button is pressed instead.
     public void SetPlayerName(string _){
@@ -34,44 +30,17 @@ public class NetworkManagerExtended : NetworkManager
         networkAddress = _;
     }
 
-    public override void OnClientSceneChanged(NetworkConnection conn)
-    {
-        base.OnClientSceneChanged(conn);
-        Debug.Log("Client Scnene Changed!");
-    }
-
-    public override void OnStartHost()
-    {
-        Debug.Log("Host Started");
-        base.OnStartHost();
-        NetworkServer.RegisterHandler<PlayerNameMessage>(AssignPlayerNameMessage);
-    }
-
-    public override void OnClientConnect(NetworkConnection conn)
-    {
-        Debug.Log("OnClientConnect called");
-        ClientScene.AddPlayer(conn);
-
-        conn.Send(new PlayerNameMessage {playerName = typedName});
-    }
-
-    private void AssignPlayerNameMessage(NetworkConnection connection, PlayerNameMessage playerNameMessage){
-        Debug.Log("AssignPlayerNameMessage");
-        GameObject playerObj = Instantiate(playerPrefab);
-
-        playerObj.GetComponent<PlayerInfo>().playerName = playerNameMessage.playerName;
-
-        NetworkServer.AddPlayerForConnection(connection, playerObj);
-    }
-
-    public override void OnServerSceneChanged(string sceneName)
-    {
-        Debug.Log("Server scene changed!");
-    }
-
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        Debug.Log("OnServerAddPlayer called!");
+
+        Transform startPos = GetStartPosition();
+        GameObject player = startPos != null
+            ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
+            : Instantiate(playerPrefab);
+
+        player.GetComponent<PlayerInfo>().playerName = typedName;
+
+        NetworkServer.AddPlayerForConnection(conn, player);
     }
 
 }
